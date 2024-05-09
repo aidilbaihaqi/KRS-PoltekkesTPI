@@ -2,6 +2,9 @@
 
 namespace Database\Seeders;
 
+use App\Models\Jurusan;
+use App\Models\Kelas;
+use App\Models\MataKuliah;
 use App\Models\User;
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
@@ -16,10 +19,83 @@ class DatabaseSeeder extends Seeder
     {
         // User::factory(10)->create();
 
+        // Administrator
         User::create([
             'name' => 'Administrator',
             'email' => 'admin@poltekkes-tanjungpinang.ac.id',
             'password' => Hash::make('admin123')    
         ]);
+
+        // Jurusan
+        Jurusan::create([
+            'kode_jurusan' => 'PLTK01',
+            'jurusan' => 'Sanitasi'
+        ]);
+        Jurusan::create([
+            'kode_jurusan' => 'PLTK02',
+            'jurusan' => 'Kebidanan'
+        ]);
+        Jurusan::create([
+            'kode_jurusan' => 'PLTK03',
+            'jurusan' => 'Keperawatan'
+        ]);
+
+        // Kelas
+        Kelas::create([
+            'kode_kelas' => 'SAT-A',
+            'nama_kelas' => 'Sanitasi A',
+            'jmlh_mahasiswa' => 30
+        ]);
+        Kelas::create([
+            'kode_kelas' => 'SAT-B',
+            'nama_kelas' => 'Sanitasi B',
+            'jmlh_mahasiswa' => 32
+        ]);
+        Kelas::create([
+            'kode_kelas' => 'BDN-A',
+            'nama_kelas' => 'Kebidanan A',
+            'jmlh_mahasiswa' => 31
+        ]);
+        Kelas::create([
+            'kode_kelas' => 'BDN-B',
+            'nama_kelas' => 'Kebidanan B',
+            'jmlh_mahasiswa' => 29
+        ]);
+        Kelas::create([
+            'kode_kelas' => 'PRWT-A',
+            'nama_kelas' => 'Keperawatan A',
+            'jmlh_mahasiswa' => 20
+        ]);
+        Kelas::create([
+            'kode_kelas' => 'PRWT-B',
+            'nama_kelas' => 'Keperawatan B',
+            'jmlh_mahasiswa' => 21
+        ]);
+        Kelas::create([
+            'kode_kelas' => 'PRWT-C',
+            'nama_kelas' => 'Keperawatan C',
+            'jmlh_mahasiswa' => 22
+        ]);
+
+        // Matakuliah
+        MataKuliah::create([
+            'kode_mk' => 'PRWT101',
+            'nama_mk' => 'Keperawatan Dasar',
+            'semester_mk' => 2,
+            'sks' => 5
+        ]);
+        MataKuliah::create([
+            'kode_mk' => 'PRWT102',
+            'nama_mk' => 'Metodologi Keperawatan',
+            'semester_mk' => 2,
+            'sks' => 2
+        ]);
+        MataKuliah::create([
+            'kode_mk' => 'PRWT103',
+            'nama_mk' => 'Gizi dan diet',
+            'semester_mk' => 2,
+            'sks' => 2
+        ]);
+
     }
 }
