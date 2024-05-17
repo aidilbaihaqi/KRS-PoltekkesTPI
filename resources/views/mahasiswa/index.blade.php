@@ -28,7 +28,7 @@
             Berikut adalah data-data mahasiswa yang dapat dicari berdasarkan NIM
           </p>
           <div class="table-responsive table-hover">
-            <table class="table table-striped">
+            <table id="dataTable" class="table table-striped">
               <thead>
                 <tr>
                   <th>#</th>

@@ -51,8 +51,6 @@
   <!-- endinject -->
   <!-- Plugin js for this page -->
   <script src="{{ asset('vendors/chart.js/Chart.min.js') }}"></script>
-  <script src="{{ asset('vendors/datatables.net/jquery.dataTables.js') }}"></script>
-  <script src="{{ asset('vendors/datatables.net-bs4/dataTables.bootstrap4.js') }}"></script>
   <script src="{{ asset('js/dataTables.select.min.js') }}"></script>
 
   <!-- End plugin js for this page -->
@@ -67,6 +65,14 @@
   <script src="{{ asset('js/dashboard.js') }}"></script>
   <script src="{{ asset('js/Chart.roundedBarCharts.js') }}"></script>
   <!-- End custom js for this page-->
+
+  {{-- Online Datatables CDN --}}
+  <script src="{{ url('https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.0/js/bootstrap.bundle.min.js') }}"></script>
+  <script src="{{ url('https://cdn.datatables.net/2.0.7/js/dataTables.js') }}"></script>
+  <script src="{{ url('https://cdn.datatables.net/2.0.7/js/dataTables.bootstrap5.js') }}"></script>
+  <script>
+    new DataTable('#dataTable');
+  </script>
 </body>
 
 </html>
