@@ -15,13 +15,13 @@
     <li class="nav-item">
       <a class="nav-link" data-toggle="collapse" href="#ui-basic" aria-expanded="false" aria-controls="ui-basic">
         <i class="icon-layout menu-icon"></i>
-        <span class="menu-title">Pembelajaran</span>
+        <span class="menu-title">Akademik</span>
         <i class="menu-arrow"></i>
       </a>
       <div class="collapse" id="ui-basic">
         <ul class="nav flex-column sub-menu">
-          <li class="nav-item"> <a class="nav-link" href="">Mata Kuliah</a></li>
-          <li class="nav-item"> <a class="nav-link" href="">Kelas</a></li>
+          <li class="nav-item"> <a class="nav-link" href="{{ route('matakuliah.index') }}">Mata Kuliah</a></li>
+          <li class="nav-item"> <a class="nav-link" href="{{ route('kelas.index') }}">Kelas</a></li>
         </ul>
       </div>
     </li>
