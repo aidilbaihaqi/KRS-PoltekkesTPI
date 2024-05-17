@@ -4,6 +4,7 @@ namespace Database\Seeders;
 
 use App\Models\Jurusan;
 use App\Models\Kelas;
+use App\Models\Mahasiswa;
 use App\Models\MataKuliah;
 use App\Models\User;
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
@@ -97,5 +98,15 @@ class DatabaseSeeder extends Seeder
             'sks' => 2
         ]);
 
+        // Mahasiswa dummy data
+        Mahasiswa::create([
+            'nim' => '0394302',
+            'nama' => 'xxx', 
+            'semester' => 1,
+            'jenis_kelamin' => 'L',
+            'tahun_akademik' => '2023/2024',
+            'kode_kelas' => 'PRWT-C',
+            'kode_jurusan' => 'PLTK03'
+        ]);
     }
 }
