@@ -16,7 +16,7 @@ return new class extends Migration
             $table->string('nama');
             $table->integer('semester');
             $table->enum('jenis_kelamin', ['L', 'P']);
-            $table->integer('tahun_akademik');
+            $table->string('tahun_akademik');
             $table->string('kode_kelas');
             $table->string('kode_jurusan');
             $table->timestamps();
