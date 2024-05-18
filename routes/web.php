@@ -15,6 +15,7 @@ Route::get('/', function () {
 Route::middleware(['auth', 'verified'])->group(function() {
     Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
     Route::get('/mahasiswa', [MahasiswaController::class, 'index'])->name('mahasiswa.index');
+    Route::get('/mahasiswa/tambah', [MahasiswaController::class, 'create'])->name('mahasiswa.create');
     Route::get('/kelas', [KelasController::class, 'index'])->name('kelas.index');
     Route::get('/matakuliah', [MatakuliahController::class, 'index'])->name('matakuliah.index');
 });

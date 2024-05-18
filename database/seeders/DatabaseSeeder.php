@@ -102,11 +102,14 @@ class DatabaseSeeder extends Seeder
         Mahasiswa::create([
             'nim' => '0394302',
             'nama' => 'xxx', 
+            'tgl_lahir' => '2024-11-21',
+            'alamat' => 'Kp Jati III',
             'semester' => 1,
             'jenis_kelamin' => 'L',
             'tahun_akademik' => '2023/2024',
             'kode_kelas' => 'PRWT-C',
-            'kode_jurusan' => 'PLTK03'
+            'kode_jurusan' => 'PLTK03',
+            'foto' => 'xxx.png'
         ]);
     }
 }
