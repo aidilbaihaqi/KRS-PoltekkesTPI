@@ -2,21 +2,21 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Jurusan;
 use Illuminate\Http\Request;
-use App\Models\Kelas;
 
-class KelasController extends Controller
+class JurusanController extends Controller
 {
     public function index() {
-        $data = Kelas::all();
-        return view('kelas.index', [
-            'title' => 'Data Kelas',
+        $data = Jurusan::all();
+        return view('jurusan.index', [
+            'title' => 'Data Jurusan',
             'data' => $data
         ]);
     }
     public function create() {
-        return view('kelas.create', [
-            'title' => 'Tambah Data Kelas'
+        return view('jurusan.create', [
+            'title' => 'Tambah Data Jurusan'
         ]);
     }
     public function store(Request $request) {

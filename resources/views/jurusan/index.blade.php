@@ -11,7 +11,7 @@
         </div>
         <div class="col-12 col-xl-4">
          <div class="justify-content-end d-flex">
-          <a class="btn btn-md btn-info" href="{{ route('kelas.create') }}">
+          <a class="btn btn-md btn-info" href="{{ route('jurusan.create') }}">
             Tambah data
            </a>
          </div>
@@ -23,18 +23,17 @@
     <div class="col-lg-12 grid-margin stretch-card">
       <div class="card">
         <div class="card-body">
-          <h4 class="card-title">Data kelas</h4>
+          <h4 class="card-title">Data jurusan</h4>
           <p class="card-description">
-            Berikut adalah data-data kelas
+            Berikut adalah data-data jurusan
           </p>
           <div class="table-responsive table-hover">
             <table class="table table-striped">
               <thead>
                 <tr>
                   <th>#</th>
-                  <th>Kode Kelas</th>
-                  <th>Nama Kelas</th>
-                  <th>Jumlah Mahasiswa</th>
+                  <th>Kode Jurusan</th>
+                  <th>Jurusan</th>
                 </tr>
               </thead>
               <tbody>
@@ -44,9 +43,8 @@
                       <a class="btn btn-sm btn-danger">Hapus</a>
                       <a class="btn btn-sm btn-success">Edit</a>
                     </td>
-                    <td><span class="font-weight-bold text-primary">{{ $d->kode_kelas }}</span></td>
-                    <td>{{ $d->nama_kelas }}</td>
-                    <td>{{ $d->jmlh_mahasiswa }}</td>
+                    <td><span class="font-weight-bold text-primary">{{ $d->kode_jurusan }}</span></td>
+                    <td>{{ $d->jurusan }}</td>
                   </tr>
                 @endforeach
               </tbody>

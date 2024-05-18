@@ -15,7 +15,9 @@ class MatakuliahController extends Controller
         ]);
     }
     public function create() {
-
+        return view('matakuliah.create', [
+            'title' => 'Tambah Data Mata Kuliah'
+        ]);
     }
     public function store(Request $request) {
 

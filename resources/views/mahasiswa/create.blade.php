@@ -11,9 +11,9 @@
         </div>
         <div class="col-12 col-xl-4">
          <div class="justify-content-end d-flex">
-          <button class="btn btn-md btn-info" type="button">
-            Tambah data
-           </button>
+          <a class="btn btn-md btn-info" href="{{ route('mahasiswa.index') }}">
+            <i class="fa-solid fa-arrow-left"></i>
+           </a>
          </div>
         </div>
       </div>
