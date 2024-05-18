@@ -15,7 +15,9 @@ class MahasiswaController extends Controller
         ]);
     }
     public function create() {
-
+        return view('mahasiswa.create', [
+            'title' => 'Tambah Data Mahasiswa'
+        ]);
     }
     public function store(Request $request) {
 

@@ -12,9 +12,9 @@
   <link rel="stylesheet" href="{{ asset('vendors/css/vendor.bundle.base.css') }}">
   <!-- endinject -->
   <!-- Plugin css for this page -->
-  <link rel="stylesheet" href="{{ asset('vendors/datatables.net-bs4/dataTables.bootstrap4.css') }}">
+  <link rel="stylesheet" href="{{ url("https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.0/css/bootstrap.min.css") }}">
+  <link rel="stylesheet" href="{{ url('https://cdn.datatables.net/2.0.7/css/dataTables.bootstrap5.css') }}">
   <link rel="stylesheet" href="{{ asset('vendors/ti-icons/css/themify-icons.css') }}">
-  <link rel="stylesheet" type="text/css" href="{{ asset('js/select.dataTables.min.css') }}">
   <!-- End plugin css for this page -->
   <!-- inject:css -->
   <link rel="stylesheet" href="{{ asset('css/vertical-layout-light/style.css') }}">
@@ -49,10 +49,6 @@
   <!-- plugins:js -->
   <script src="{{ asset('vendors/js/vendor.bundle.base.js') }}"></script>
   <!-- endinject -->
-  <!-- Plugin js for this page -->
-  <script src="{{ asset('vendors/chart.js/Chart.min.js') }}"></script>
-  <script src="{{ asset('js/dataTables.select.min.js') }}"></script>
-
   <!-- End plugin js for this page -->
   <!-- inject:js -->
   <script src="{{ asset('js/off-canvas.js') }}"></script>

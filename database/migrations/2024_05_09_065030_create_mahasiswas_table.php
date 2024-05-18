@@ -14,11 +14,14 @@ return new class extends Migration
         Schema::create('mahasiswas', function (Blueprint $table) {
             $table->string('nim')->primary();
             $table->string('nama');
+            $table->date('tgl_lahir');
+            $table->string('alamat');
             $table->integer('semester');
             $table->enum('jenis_kelamin', ['L', 'P']);
             $table->string('tahun_akademik');
             $table->string('kode_kelas');
             $table->string('kode_jurusan');
+            $table->string('foto');
             $table->timestamps();
         });
     }

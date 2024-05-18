@@ -11,9 +11,9 @@
         </div>
         <div class="col-12 col-xl-4">
          <div class="justify-content-end d-flex">
-          <button class="btn btn-md btn-info" type="button">
+          <a class="btn btn-md btn-info" href="{{ route('mahasiswa.create') }}">
             Tambah data
-           </button>
+           </a>
          </div>
         </div>
       </div>
@@ -34,8 +34,8 @@
                   <th>#</th>
                   <th>NIM</th>
                   <th>Nama</th>
-                  <th>Semester</th>
                   <th>Jenis Kelamin</th>
+                  <th>Semester</th>
                   <th>Tahun Akademik</th>
                 </tr>
               </thead>
@@ -43,14 +43,14 @@
                 @foreach ($data as $d)
                   <tr>
                     <td>
-                      <a class="btn btn-sm btn-danger">Hapus</a>
-                      <a class="btn btn-sm btn-success">Edit</a>
-                      <a class="btn btn-sm btn-info">Details</a>
+                      <a class="btn btn-sm btn-danger" href="">Hapus</a>
+                      <a class="btn btn-sm btn-success" href="">Edit</a>
+                      <a class="btn btn-sm btn-info" href="">Details</a>
                     </td>
                     <td><span class="font-weight-bold text-primary">{{ $d->nim }}</span></td>
                     <td>{{ $d->nama }}</td>
-                    <td>{{ $d->semester }}</td>
                     <td>{{ $d->jenis_kelamin }}</td>
+                    <td>{{ $d->semester }}</td>
                     <td>{{ $d->tahun_akademik }}</td>
                   </tr>
                 @endforeach
