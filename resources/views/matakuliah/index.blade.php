@@ -11,9 +11,9 @@
         </div>
         <div class="col-12 col-xl-4">
          <div class="justify-content-end d-flex">
-          <button class="btn btn-md btn-info" type="button">
+          <a class="btn btn-md btn-info" href="{{ route("matakuliah.create") }}">
             Tambah data
-           </button>
+           </a>
          </div>
         </div>
       </div>

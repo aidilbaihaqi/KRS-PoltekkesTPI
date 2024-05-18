@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\JurusanController;
 use App\Http\Controllers\KelasController;
 use App\Http\Controllers\MatakuliahController;
 use App\Http\Controllers\MahasiswaController;
@@ -17,7 +18,11 @@ Route::middleware(['auth', 'verified'])->group(function() {
     Route::get('/mahasiswa', [MahasiswaController::class, 'index'])->name('mahasiswa.index');
     Route::get('/mahasiswa/tambah', [MahasiswaController::class, 'create'])->name('mahasiswa.create');
     Route::get('/kelas', [KelasController::class, 'index'])->name('kelas.index');
+    Route::get('/kelas/tambah', [KelasController::class, 'create'])->name('kelas.create');
     Route::get('/matakuliah', [MatakuliahController::class, 'index'])->name('matakuliah.index');
+    Route::get('/matakuliah/tambah', [MatakuliahController::class, 'create'])->name('matakuliah.create');
+    Route::get('/jurusan', [JurusanController::class, 'index'])->name('jurusan.index');
+    Route::get('/jurusan/tambah', [JurusanController::class, 'create'])->name('jurusan.create');
 });
 
 Route::middleware('auth')->group(function () {

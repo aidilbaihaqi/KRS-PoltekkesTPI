@@ -22,6 +22,7 @@
         <ul class="nav flex-column sub-menu">
           <li class="nav-item"> <a class="nav-link" href="{{ route('matakuliah.index') }}">Mata Kuliah</a></li>
           <li class="nav-item"> <a class="nav-link" href="{{ route('kelas.index') }}">Kelas</a></li>
+          <li class="nav-item"> <a class="nav-link" href="{{ route('jurusan.index') }}">Jurusan</a></li>
         </ul>
       </div>
     </li>

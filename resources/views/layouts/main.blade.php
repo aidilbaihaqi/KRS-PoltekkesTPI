@@ -47,6 +47,7 @@
   <!-- container-scroller -->
 
   <!-- plugins:js -->
+  <script src="{{ url('https://kit.fontawesome.com/e632a4a2d6.js') }}" crossorigin="anonymous"></script>
   <script src="{{ asset('vendors/js/vendor.bundle.base.js') }}"></script>
   <!-- endinject -->
   <!-- End plugin js for this page -->
