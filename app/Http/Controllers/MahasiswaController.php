@@ -31,4 +31,11 @@ class MahasiswaController extends Controller
     public function show($primary_key_nya) {
 
     } 
+    public function destroy($nim) {
+        $data = Mahasiswa::where('nim', $nim);
+        $data->delete();
+
+        return redirect()->route('mahasiswa.index')
+                        ->with('success', 'Mahasiswa berhasil dihapus!');
+    }
 }

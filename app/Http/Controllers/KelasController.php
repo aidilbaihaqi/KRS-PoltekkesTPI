@@ -30,5 +30,12 @@ class KelasController extends Controller
     }
     public function show($primary_key_nya) {
 
-    } 
+    }
+    public function destroy($kode_kelas) {
+        $data = Kelas::where('kode_kelas', $kode_kelas);
+        $data->delete();
+
+        return redirect()->route('kelas.index')
+                        ->with('success', 'Kelas berhasil dihapus!');
+    }
 }

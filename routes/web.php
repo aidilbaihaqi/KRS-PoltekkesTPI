@@ -17,12 +17,16 @@ Route::middleware(['auth', 'verified'])->group(function() {
     Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
     Route::get('/mahasiswa', [MahasiswaController::class, 'index'])->name('mahasiswa.index');
     Route::get('/mahasiswa/tambah', [MahasiswaController::class, 'create'])->name('mahasiswa.create');
+    Route::get('/mahasiswa/{nim}', [MahasiswaController::class, 'destroy'])->name('mahasiswa.destroy');
     Route::get('/kelas', [KelasController::class, 'index'])->name('kelas.index');
     Route::get('/kelas/tambah', [KelasController::class, 'create'])->name('kelas.create');
+    Route::get('/kelas/{kode_kelas}', [KelasController::class, 'destroy'])->name('kelas.destroy');
     Route::get('/matakuliah', [MatakuliahController::class, 'index'])->name('matakuliah.index');
     Route::get('/matakuliah/tambah', [MatakuliahController::class, 'create'])->name('matakuliah.create');
+    Route::get('/matakuliah/{kode_mk}', [MatakuliahController::class, 'destroy'])->name('matakuliah.destroy');
     Route::get('/jurusan', [JurusanController::class, 'index'])->name('jurusan.index');
     Route::get('/jurusan/tambah', [JurusanController::class, 'create'])->name('jurusan.create');
+    Route::get('/jurusan/{kode_jurusan}', [JurusanController::class, 'destroy'])->name('jurusan.destroy');
 });
 
 Route::middleware('auth')->group(function () {

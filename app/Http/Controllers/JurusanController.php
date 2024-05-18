@@ -31,4 +31,11 @@ class JurusanController extends Controller
     public function show($primary_key_nya) {
 
     } 
+    public function destroy($kode_jurusan) {
+        $data = Jurusan::where('kode_jurusan', $kode_jurusan);
+        $data->delete();
+
+        return redirect()->route('jurusan.index')
+                        ->with('success', 'Jurusan berhasil dihapus!');
+    }
 }
