@@ -11,7 +11,7 @@
         </div>
         <div class="col-12 col-xl-4">
          <div class="justify-content-end d-flex">
-          <a class="btn btn-md btn-info" href="{{ route('matakuliah.index') }}">
+          <a class="btn btn-md btn-info" href="{{ route('kelas.index') }}">
             <i class="fa-solid fa-arrow-left"></i>
            </a>
          </div>
@@ -23,6 +23,11 @@
     <div class="col-lg-12 grid-margin stretch-card">
       <div class="card">
         <div class="card-body">
+          <h4 class="card-title">Ubah Data Kelas</h4>
+          <p class="card-description">
+            Form penambahan data kelas
+          </p>
+
           @if ($errors->any())
               <div class="alert alert-danger">
                   <strong>Whoops!</strong> There were some problems with your input.<br><br>
@@ -33,39 +38,30 @@
                   </ul>
               </div>
           @endif
-          <h4 class="card-title">Tambah Data Mata Kuliah</h4>
-          <p class="card-description">
-            Form penambahan data mata kuliah
-          </p>
+
           <div>
-            <form action="{{ route('matakuliah.store') }}" method="POST">
+            <form action="{{ route('kelas.update', $data->kode_kelas) }}" method="POST">
               @csrf
+              
               <div>
-                <label class="col-form-label col-md-3 col-sm-3 label-align" for="kode_mk">Kode MK
+                <label class="col-form-label col-md-3 col-sm-3 label-align" for="kode_kelas">Kode Kelas
                 </label>
                 <div class="col-md-6 col-sm-6 ">
-                  <input type="text" id="kode_mk" name="kode_mk" required="required" class="form-control ">
+                  <input type="text" id="kode_kelas" name="kode_kelas" value="{{ $data->kode_kelas }}" required="required" class="form-control ">
                 </div>
               </div>
               <div>
-                <label class="col-form-label col-md-3 col-sm-3 label-align" for="nama_mk">Nama MK
+                <label class="col-form-label col-md-3 col-sm-3 label-align" for="nama_kelas">Nama Kelas
                 </label>
                 <div class="col-md-6 col-sm-6 ">
-                  <input type="text" id="nama_mk" name="nama_mk" required="required" class="form-control ">
+                  <input type="text" id="nama_kelas" name="nama_kelas" value="{{ $data->nama_kelas }}" required="required" class="form-control ">
                 </div>
               </div>
               <div>
-                <label class="col-form-label col-md-3 col-sm-3 label-align" for="semester_mk">Semester
+                <label class="col-form-label col-md-3 col-sm-3 label-align" for="jmlh_mahasiswa">Jumlah Mahasiswa
                 </label>
                 <div class="col-md-6 col-sm-6 ">
-                  <input type="number" id="semester_mk" name="semester_mk" value="0" required="required" class="form-control ">
-                </div>
-              </div>
-              <div>
-                <label class="col-form-label col-md-3 col-sm-3 label-align" for="sks">SKS
-                </label>
-                <div class="col-md-6 col-sm-6 ">
-                  <input type="number" id="sks" name="sks" required="required" value="0" class="form-control ">
+                  <input type="number" id="jmlh_mahasiswa" name="jmlh_mahasiswa" value="{{ $data->jmlh_mahasiswa }}" required="required" class="form-control ">
                 </div>
               </div>
               <div class="mt-4">

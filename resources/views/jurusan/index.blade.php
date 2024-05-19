@@ -48,7 +48,7 @@
                   <tr>
                     <td>
                       <a class="btn btn-sm btn-danger" href="{{ route('jurusan.destroy', $d->kode_jurusan) }}">Hapus</a>
-                      <a class="btn btn-sm btn-success">Edit</a>
+                      <a class="btn btn-sm btn-success" href="{{ route('jurusan.edit', $d->kode_jurusan) }}">Edit</a>
                     </td>
                     <td><span class="font-weight-bold text-primary">{{ $d->kode_jurusan }}</span></td>
                     <td>{{ $d->jurusan }}</td>

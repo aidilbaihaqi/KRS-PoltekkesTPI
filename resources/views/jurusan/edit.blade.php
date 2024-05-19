@@ -35,25 +35,25 @@
     <div class="col-lg-12 grid-margin stretch-card">
       <div class="card">
         <div class="card-body">
-          <h4 class="card-title">Tambah Data Jurusan</h4>
+          <h4 class="card-title">Ubah Data Jurusan</h4>
           <p class="card-description">
             Form penambahan data jurusan
           </p>
           <div>
-            <form action="{{ route('jurusan.store') }}" method="POST">
+            <form action="{{ route('jurusan.update', $data->kode_jurusan) }}" method="POST">
               @csrf
               <div>
                 <label class="col-form-label col-md-3 col-sm-3 label-align" for="kode_jurusan">Kode Jurusan
                 </label>
                 <div class="col-md-6 col-sm-6 ">
-                  <input type="text" id="kode_jurusan" name="kode_jurusan" required="required" class="form-control ">
+                  <input type="text" id="kode_jurusan" name="kode_jurusan" value="{{ $data->kode_jurusan }}" required="required" class="form-control ">
                 </div>
               </div>
               <div>
                 <label class="col-form-label col-md-3 col-sm-3 label-align" for="jurusan">Jurusan
                 </label>
                 <div class="col-md-6 col-sm-6 ">
-                  <input type="text" id="jurusan" name="jurusan" required="required" class="form-control ">
+                  <input type="text" id="jurusan" name="jurusan" value="{{ $data->jurusan }}" required="required" class="form-control ">
                 </div>
               </div>
               <div class="mt-4">

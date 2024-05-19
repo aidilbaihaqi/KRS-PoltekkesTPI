@@ -7,9 +7,14 @@ use Illuminate\Database\Eloquent\Model;
 
 class MataKuliah extends Model
 {
-    use HasFactory;
-
-    protected $primary_key = 'kode_mk';
+    protected $primaryKey = 'kode_mk';
     public $incrementing = false;
-    protected $key_type = 'string';
+    protected $keyType = 'string';
+
+    protected $fillable = [
+        'kode_mk',
+        'nama_mk',
+        'semester_mk',
+        'sks'
+    ];
 }
