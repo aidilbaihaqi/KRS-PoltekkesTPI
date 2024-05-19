@@ -31,4 +31,11 @@ class MatakuliahController extends Controller
     public function show($primary_key_nya) {
 
     } 
+    public function destroy($kode_mk) {
+        $data = Matakuliah::where('kode_mk', $kode_mk);
+        $data->delete();
+
+        return redirect()->route('matakuliah.index')
+                        ->with('success', 'Mata kuliah berhasil dihapus!');
+    }
 }

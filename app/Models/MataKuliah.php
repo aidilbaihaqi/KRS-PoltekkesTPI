@@ -8,4 +8,8 @@ use Illuminate\Database\Eloquent\Model;
 class MataKuliah extends Model
 {
     use HasFactory;
+
+    protected $primary_key = 'kode_mk';
+    public $incrementing = false;
+    protected $key_type = 'string';
 }

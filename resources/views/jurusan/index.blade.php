@@ -19,6 +19,13 @@
       </div>
     </div>
   </div>
+
+  @if ($message = Session::get('success'))
+      <div class="alert alert-success">
+          <p>{{ $message }}</p>
+      </div>
+  @endif
+
   <div class="row">
     <div class="col-lg-12 grid-margin stretch-card">
       <div class="card">
@@ -40,7 +47,7 @@
                 @foreach ($data as $d)
                   <tr>
                     <td>
-                      <a class="btn btn-sm btn-danger">Hapus</a>
+                      <a class="btn btn-sm btn-danger" href="{{ route('jurusan.destroy', $d->kode_jurusan) }}">Hapus</a>
                       <a class="btn btn-sm btn-success">Edit</a>
                     </td>
                     <td><span class="font-weight-bold text-primary">{{ $d->kode_jurusan }}</span></td>

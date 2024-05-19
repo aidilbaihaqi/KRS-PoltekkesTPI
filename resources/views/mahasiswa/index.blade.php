@@ -19,6 +19,13 @@
       </div>
     </div>
   </div>
+
+  @if ($message = Session::get('success'))
+    <div class="alert alert-success">
+      {{ $message }}
+    </div>
+  @endif
+
   <div class="row">
     <div class="col-lg-12 grid-margin stretch-card">
       <div class="card">
@@ -43,7 +50,7 @@
                 @foreach ($data as $d)
                   <tr>
                     <td>
-                      <a class="btn btn-sm btn-danger" href="">Hapus</a>
+                      <a class="btn btn-sm btn-danger" href="{{ route('mahasiswa.destroy', $d->nim) }}">Hapus</a>
                       <a class="btn btn-sm btn-success" href="">Edit</a>
                       <a class="btn btn-sm btn-info" href="">Details</a>
                     </td>

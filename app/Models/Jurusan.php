@@ -8,4 +8,8 @@ use Illuminate\Database\Eloquent\Model;
 class Jurusan extends Model
 {
     use HasFactory;
+
+    protected $primary_key = 'kode_jurusan';
+    public $incrementing = false;
+    protected $key_type = 'string';
 }

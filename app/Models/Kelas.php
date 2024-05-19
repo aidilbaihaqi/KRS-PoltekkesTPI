@@ -8,4 +8,8 @@ use Illuminate\Database\Eloquent\Model;
 class Kelas extends Model
 {
     use HasFactory;
+
+    protected $primary_key = 'kode_kelas';
+    protected $key_type = 'string';
+    public $incrementing = false;
 }
