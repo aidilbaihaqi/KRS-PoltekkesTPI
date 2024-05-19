@@ -7,9 +7,15 @@ use Illuminate\Database\Eloquent\Model;
 
 class Kelas extends Model
 {
-    use HasFactory;
-
-    protected $primary_key = 'kode_kelas';
-    protected $key_type = 'string';
+    protected $primaryKey = 'kode_kelas';
+    protected $keyType = 'string';
     public $incrementing = false;
+
+    protected $fillable = [
+        'kode_kelas',
+        'nama_kelas',
+        'jmlh_mahasiswa'
+    ];
+
+    
 }

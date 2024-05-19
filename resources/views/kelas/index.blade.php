@@ -49,7 +49,7 @@
                   <tr>
                     <td>
                       <a class="btn btn-sm btn-danger" href="{{ route('kelas.destroy', $d->kode_kelas) }}">Hapus</a>
-                      <a class="btn btn-sm btn-success">Edit</a>
+                      <a class="btn btn-sm btn-success" href="{{ route('kelas.edit', $d->kode_kelas) }}">Edit</a>
                     </td>
                     <td><span class="font-weight-bold text-primary">{{ $d->kode_kelas }}</span></td>
                     <td>{{ $d->nama_kelas }}</td>

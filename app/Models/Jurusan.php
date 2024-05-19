@@ -7,9 +7,12 @@ use Illuminate\Database\Eloquent\Model;
 
 class Jurusan extends Model
 {
-    use HasFactory;
-
-    protected $primary_key = 'kode_jurusan';
+    protected $primaryKey = 'kode_jurusan';
     public $incrementing = false;
-    protected $key_type = 'string';
+    protected $keyType = 'string';
+
+    protected $fillable = [
+        'kode_jurusan',
+        'jurusan'
+    ];
 }

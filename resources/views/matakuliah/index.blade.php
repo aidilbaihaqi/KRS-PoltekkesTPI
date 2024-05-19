@@ -50,7 +50,7 @@
                   <tr>
                     <td>
                       <a class="btn btn-sm btn-danger" href="{{ route('matakuliah.destroy', $d->kode_mk) }}">Hapus</a>
-                      <a class="btn btn-sm btn-success">Edit</a>
+                      <a class="btn btn-sm btn-success" href={{ route('matakuliah.edit', $d->kode_mk) }}>Edit</a>
                     </td>
                     <td><span class="font-weight-bold text-primary">{{ $d->kode_mk }}</span></td>
                     <td>{{ $d->nama_mk }}</td>

@@ -33,39 +33,39 @@
                   </ul>
               </div>
           @endif
-          <h4 class="card-title">Tambah Data Mata Kuliah</h4>
+          <h4 class="card-title">Ubah Data Mata Kuliah</h4>
           <p class="card-description">
             Form penambahan data mata kuliah
           </p>
           <div>
-            <form action="{{ route('matakuliah.store') }}" method="POST">
+            <form action="{{ route('matakuliah.update', $data->kode_mk) }}" method="POST">
               @csrf
               <div>
                 <label class="col-form-label col-md-3 col-sm-3 label-align" for="kode_mk">Kode MK
                 </label>
                 <div class="col-md-6 col-sm-6 ">
-                  <input type="text" id="kode_mk" name="kode_mk" required="required" class="form-control ">
+                  <input type="text" id="kode_mk" name="kode_mk" value="{{ $data->kode_mk }}" required="required" class="form-control ">
                 </div>
               </div>
               <div>
                 <label class="col-form-label col-md-3 col-sm-3 label-align" for="nama_mk">Nama MK
                 </label>
                 <div class="col-md-6 col-sm-6 ">
-                  <input type="text" id="nama_mk" name="nama_mk" required="required" class="form-control ">
+                  <input type="text" id="nama_mk" name="nama_mk" value="{{ $data->nama_mk }}" required="required" class="form-control ">
                 </div>
               </div>
               <div>
                 <label class="col-form-label col-md-3 col-sm-3 label-align" for="semester_mk">Semester
                 </label>
                 <div class="col-md-6 col-sm-6 ">
-                  <input type="number" id="semester_mk" name="semester_mk" value="0" required="required" class="form-control ">
+                  <input type="number" id="semester_mk" name="semester_mk" value="{{ $data->semester_mk }}" required="required" class="form-control ">
                 </div>
               </div>
               <div>
                 <label class="col-form-label col-md-3 col-sm-3 label-align" for="sks">SKS
                 </label>
                 <div class="col-md-6 col-sm-6 ">
-                  <input type="number" id="sks" name="sks" required="required" value="0" class="form-control ">
+                  <input type="number" id="sks" name="sks" required="required" value="{{ $data->sks }}" class="form-control ">
                 </div>
               </div>
               <div class="mt-4">

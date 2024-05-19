@@ -27,8 +27,20 @@
           <p class="card-description">
             Form penambahan data kelas
           </p>
+
+          @if ($errors->any())
+              <div class="alert alert-danger">
+                  <strong>Whoops!</strong> There were some problems with your input.<br><br>
+                  <ul>
+                      @foreach ($errors->all() as $error)
+                          <li>{{ $error }}</li>
+                      @endforeach
+                  </ul>
+              </div>
+          @endif
+
           <div>
-            <form action="" method="POST">
+            <form action="{{ route('kelas.store') }}" method="POST">
               @csrf
               <div>
                 <label class="col-form-label col-md-3 col-sm-3 label-align" for="kode_kelas">Kode Kelas
