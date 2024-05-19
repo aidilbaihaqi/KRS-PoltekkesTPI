@@ -7,8 +7,20 @@ use Illuminate\Database\Eloquent\Model;
 
 class Mahasiswa extends Model
 {
-    use HasFactory;
-    protected $primary_key = 'nim';
+    protected $primaryKey = 'nim';
     public $incrementing = false;
-    protected $key_type = 'string';
+    protected $keyType = 'string';
+
+    protected $fillable = [
+        'nim',
+        'nama',
+        'tgl_lahir',
+        'alamat',
+        'semester',
+        'jenis_kelamin',
+        'tahun_akademik',
+        'kode_kelas',
+        'kode_jurusan',
+        'foto'
+    ];
 }
