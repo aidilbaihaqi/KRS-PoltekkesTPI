@@ -29,10 +29,14 @@
             <i class="ti-settings text-primary"></i>
             Settings
           </a>
-          <a class="dropdown-item">
-            <i class="ti-power-off text-primary"></i>
-            Logout
-          </a>
+          <form action="{{ route('logout') }}" method="post">
+            @csrf
+
+            <button class="dropdown-item" type="submit" onclick="return confirm('Apa anda yakin ingin logout?')">
+              <i class="ti-power-off text-primary"></i>
+              Logout
+            </button>
+          </form>
         </div>
       </li>
     </ul>
