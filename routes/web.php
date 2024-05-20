@@ -5,6 +5,7 @@ use App\Http\Controllers\JurusanController;
 use App\Http\Controllers\KelasController;
 use App\Http\Controllers\MatakuliahController;
 use App\Http\Controllers\MahasiswaController;
+use App\Http\Controllers\KRSController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
@@ -14,6 +15,15 @@ Route::get('/', function () {
 
 Route::middleware(['auth', 'verified'])->group(function() {
     Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
+
+    Route::controller(KRSController::class)->group(function (){
+        Route::get('/krs', 'index')->name('krs.index');
+        Route::get('/krs/tambah', 'create')->name('krs.create');
+        Route::post('/krs/tambah', 'store')->name('krs.store');
+        Route::get('/krs/ubah/{kode_krs}', 'edit')->name('krs.edit');
+        Route::post('/krs/ubah/{kode_krs}', 'update')->name('krs.update');
+        Route::get('/krs/{kode_krs}', 'destroy')->name('krs.destroy');
+    });
 
     Route::controller(MahasiswaController::class)->group(function() {
         Route::get('/mahasiswa', 'index')->name('mahasiswa.index');
