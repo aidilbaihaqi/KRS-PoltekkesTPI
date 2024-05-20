@@ -35,7 +35,7 @@
           @endif
           <h4 class="card-title">Ubah Data Mata Kuliah</h4>
           <p class="card-description">
-            Form penambahan data mata kuliah
+            Form perubahan data mata kuliah
           </p>
           <div>
             <form action="{{ route('matakuliah.update', $data->kode_mk) }}" method="POST">

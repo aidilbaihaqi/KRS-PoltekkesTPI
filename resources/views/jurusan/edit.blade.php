@@ -37,7 +37,7 @@
         <div class="card-body">
           <h4 class="card-title">Ubah Data Jurusan</h4>
           <p class="card-description">
-            Form penambahan data jurusan
+            Form perubahan data jurusan
           </p>
           <div>
             <form action="{{ route('jurusan.update', $data->kode_jurusan) }}" method="POST">
