@@ -12,13 +12,15 @@ Route::get('/', function () {
     return Redirect::to('login');
 });
 
-
 Route::middleware(['auth', 'verified'])->group(function() {
     Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
 
     Route::controller(MahasiswaController::class)->group(function() {
         Route::get('/mahasiswa', 'index')->name('mahasiswa.index');
         Route::get('/mahasiswa/tambah', 'create')->name('mahasiswa.create');
+        Route::post('/mahasiswa/tambah', 'store')->name('mahasiswa.store');
+        Route::get('/mahasiswa/ubah/{nim}', 'edit')->name('mahasiswa.edit');
+        Route::post('/mahasiswa/ubah/{nim}', 'update')->name('mahasiswa.update');
         Route::get('/mahasiswa/{nim}', 'destroy')->name('mahasiswa.destroy');
     });
 
@@ -49,7 +51,6 @@ Route::middleware(['auth', 'verified'])->group(function() {
         Route::get('/jurusan/{kode_jurusan}', 'destroy')->name('jurusan.destroy');
     });
 
-    
 });
 
 Route::middleware('auth')->group(function () {

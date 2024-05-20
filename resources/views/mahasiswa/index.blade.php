@@ -51,7 +51,7 @@
                   <tr>
                     <td>
                       <a class="btn btn-sm btn-danger" href="{{ route('mahasiswa.destroy', $d->nim) }}"><i class="fa-solid fa-trash"></i></a>
-                      <a class="btn btn-sm btn-success" href=""><i class="fa-solid fa-pen-to-square"></i></a>
+                      <a class="btn btn-sm btn-success" href="{{ route('mahasiswa.edit', $d->nim) }}"><i class="fa-solid fa-pen-to-square"></i></a>
                       <a class="btn btn-sm btn-info" href=""><i class="fa-solid fa-circle-info"></i></a>
                     </td>
                     <td><span class="font-weight-bold text-primary">{{ $d->nim }}</span></td>
