@@ -25,14 +25,14 @@ return new class extends Migration
             ->onDelete('cascade')
             ->onUpdate('cascade');
         });
-        Schema::table('krs', function (Blueprint $table) {
+        Schema::table('k_r_s', function (Blueprint $table) {
             $table->foreign('nim')
             ->references('nim')
             ->on('mahasiswas')
             ->onDelete('cascade')
             ->onUpdate('cascade');
         });
-        Schema::table('krs', function (Blueprint $table) {
+        Schema::table('k_r_s', function (Blueprint $table) {
             $table->foreign('kode_mk')
             ->references('kode_mk')
             ->on('mata_kuliahs')

@@ -7,6 +7,7 @@ use App\Models\Kelas;
 use App\Models\Mahasiswa;
 use App\Models\MataKuliah;
 use App\Models\User;
+use App\Models\KRS;
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\Hash;
@@ -110,6 +111,14 @@ class DatabaseSeeder extends Seeder
             'kode_kelas' => 'PRWT-C',
             'kode_jurusan' => 'PLTK03',
             'foto' => 'xxx.png'
+        ]);
+
+        // krs dummy data
+        KRS::create([
+            'kode_krs' => 'KRS039430201',
+            'nim' => '0394302',
+            'kode_mk' => 'PRWT101',
+            'status' => 0
         ]);
     }
 }

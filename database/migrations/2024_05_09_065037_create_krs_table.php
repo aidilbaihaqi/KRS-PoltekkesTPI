@@ -11,10 +11,9 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('krs', function (Blueprint $table) {
+        Schema::create('k_r_s', function (Blueprint $table) {
             $table->string('kode_krs')->primary();
             $table->string('nim');
-            $table->string('semester');
             $table->string('kode_mk');
             $table->boolean('status')->default(0);
             $table->timestamps();
