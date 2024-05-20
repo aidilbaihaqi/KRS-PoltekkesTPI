@@ -25,7 +25,7 @@
         <div class="card-body">
           <h4 class="card-title">Ubah Data Kelas</h4>
           <p class="card-description">
-            Form penambahan data kelas
+            Form perubahan data kelas
           </p>
 
           @if ($errors->any())
