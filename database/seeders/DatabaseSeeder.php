@@ -25,6 +25,7 @@ class DatabaseSeeder extends Seeder
         User::create([
             'name' => 'Administrator',
             'email' => 'admin@poltekkes-tanjungpinang.ac.id',
+            'isAdmin' => 1,
             'password' => Hash::make('admin123')    
         ]);
 
@@ -101,24 +102,33 @@ class DatabaseSeeder extends Seeder
 
         // Mahasiswa dummy data
         Mahasiswa::create([
-            'nim' => '0394302',
-            'nama' => 'xxx', 
-            'tgl_lahir' => '2024-11-21',
+            'nim' => '12345-01',
+            'nama' => 'Aidil Baihaqi', 
+            'tgl_lahir' => '2004-11-21',
             'alamat' => 'Kp Jati III',
             'semester' => 1,
             'jenis_kelamin' => 'L',
             'tahun_akademik' => '2023/2024',
             'kode_kelas' => 'PRWT-C',
             'kode_jurusan' => 'PLTK03',
-            'foto' => 'xxx.png'
+            'foto' => 'aidil-ori.jpg'
         ]);
 
         // krs dummy data
         KRS::create([
-            'kode_krs' => 'KRS039430201',
-            'nim' => '0394302',
+            'kode_krs' => 'KRS12345-01-01',
+            'nim' => '12345-01',
             'kode_mk' => 'PRWT101',
             'status' => 0
+        ]);
+
+        // Mahasiswa
+        User::create([
+            'name' => 'Aidil Baihaqi',
+            'email' => 'aidilbaihaqi@poltekkes-tanjungpinang.ac.id',
+            'isAdmin' => 0,
+            'nim' => '12345-01',
+            'password' => Hash::make('aidilbaihaqi')
         ]);
     }
 }

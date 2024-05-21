@@ -10,7 +10,12 @@ use App\Models\MataKuliah;
 class KRSController extends Controller
 {
     public function index() {
-        $data = KRS::all();
+        if(Auth()->user()->isAdmin == 1){
+            $data = KRS::all();
+        }else {
+            $data = KRS::where('nim', Auth()->user()->nim)->get();
+        }
+
         return view('krs.index', [
             'title' => 'Kartu Rencana Studi Mahasiswa',
             'data' => $data
