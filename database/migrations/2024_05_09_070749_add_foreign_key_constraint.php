@@ -39,6 +39,13 @@ return new class extends Migration
             ->onDelete('cascade')
             ->onUpdate('cascade');
         });
+        Schema::table('users', function(Blueprint $table) {
+            $table->foreign('nim')
+            ->references('nim')
+            ->on('mahasiswas')
+            ->onDelete('cascade')
+            ->onUpdate('cascade');
+        });
         
     }
 

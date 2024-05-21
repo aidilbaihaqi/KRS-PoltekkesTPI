@@ -11,7 +11,11 @@ use Illuminate\Support\Facades\Storage;
 class MahasiswaController extends Controller
 {
     public function index() {
-        $data = Mahasiswa::all();
+        if(Auth()->user()->isAdmin == 1) {
+            $data = Mahasiswa::all();
+        }else {
+            $data = Mahasiswa::where('nim', Auth()->user()->nim)->first();
+        }
         return view('mahasiswa.index', [
             'title' => 'Data Mahasiswa',
             'data' => $data

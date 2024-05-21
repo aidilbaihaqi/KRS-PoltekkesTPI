@@ -1,4 +1,5 @@
 <nav class="sidebar sidebar-offcanvas" id="sidebar">
+  @if (Auth()->user()->isAdmin == 1)
   <ul class="nav">
     <li class="nav-item">
       <a class="nav-link" href="{{ route('dashboard') }}">
@@ -33,4 +34,22 @@
       </div>
     </li>
   </ul>
+      
+  @else
+  <ul class="nav">
+    <li class="nav-item">
+      <a class="nav-link" href="{{ route('mahasiswa.index') }}">
+        <i class="fa-solid fa-user mx-3"></i>
+        <span class="menu-title">Data Mahasiswa</span>
+      </a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="{{ route('krs.index') }}">
+        <i class="fa-solid fa-id-card mx-3"></i>
+        <span class="menu-title">Kartu Rencana Studi</span>
+      </a>
+    </li>
+  </ul>
+  @endif
+  
 </nav>
