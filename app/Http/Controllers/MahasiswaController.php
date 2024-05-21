@@ -17,6 +17,15 @@ class MahasiswaController extends Controller
             'data' => $data
         ]);
     }
+    public function search(Request $request) {
+        $search = $request->search;
+        $data = Mahasiswa::where('nim', $search)->get();
+
+        return view('mahasiswa.index', [
+            'title' => 'Data Mahasiswa',
+            'data' => $data
+        ]);
+    }
     public function show($nim) {
         $data = Mahasiswa::where('nim', $nim)->first();
         return view('mahasiswa.show', [

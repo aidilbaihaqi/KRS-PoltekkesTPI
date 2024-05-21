@@ -32,8 +32,16 @@
         <div class="card-body">
           <h4 class="card-title">Data mahasiswa</h4>
           <p class="card-description">
-            Berikut adalah data-data mahasiswa yang dapat dicari berdasarkan NIM
+            Berikut adalah data-data mahasiswa yang dapat dicari berdasarkan <b>NIM</b>
           </p>
+          <div class="col-lg-7">
+            <form action="{{ route('mahasiswa.search') }}" method="get">
+              <div class="input-group">
+                <input class="form-control" name="search" placeholder="Cari data">
+                <button type="submit" class="btn btn-sm btn-primary">Cari</button>
+              </div>
+            </form>
+          </div>
           <div class="table-responsive table-hover">
             <table id="dataTable" class="table table-striped">
               <thead>

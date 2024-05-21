@@ -12,7 +12,14 @@ class KRSController extends Controller
     public function index() {
         $data = KRS::all();
         return view('krs.index', [
-        'title' => 'Kartu Rencana Studi Mahasiswa',
+            'title' => 'Kartu Rencana Studi Mahasiswa',
+            'data' => $data
+        ]);
+    }
+    public function search(Request $request) {
+        $data = KRS::where('nim', $request->search)->get();
+        return view('krs.index', [
+            'title' => 'Kartu Rencana Studi Mahasiswa',
             'data' => $data
         ]);
     }
