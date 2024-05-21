@@ -27,6 +27,7 @@ Route::middleware(['auth', 'verified'])->group(function() {
 
     Route::controller(MahasiswaController::class)->group(function() {
         Route::get('/mahasiswa', 'index')->name('mahasiswa.index');
+        Route::get('/mahasiswa/detail/{nim}', 'show')->name('mahasiswa.show');
         Route::get('/mahasiswa/tambah', 'create')->name('mahasiswa.create');
         Route::post('/mahasiswa/tambah', 'store')->name('mahasiswa.store');
         Route::get('/mahasiswa/ubah/{nim}', 'edit')->name('mahasiswa.edit');

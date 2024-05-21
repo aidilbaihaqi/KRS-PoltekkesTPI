@@ -17,6 +17,13 @@ class MahasiswaController extends Controller
             'data' => $data
         ]);
     }
+    public function show($nim) {
+        $data = Mahasiswa::where('nim', $nim)->first();
+        return view('mahasiswa.show', [
+            'title' => 'Detail Data Mahasiswa',
+            'data' => $data
+        ]);
+    }
     public function create() {
         $kelas = Kelas::all();
         $jurusan = Jurusan::all();
