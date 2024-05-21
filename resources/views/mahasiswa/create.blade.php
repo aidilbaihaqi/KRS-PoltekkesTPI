@@ -40,7 +40,7 @@
             Form penambahan data mahasiswa
           </p>
           <div>
-            <form action="{{ route('mahasiswa.store') }}" method="POST">
+            <form action="{{ route('mahasiswa.store') }}" method="POST" enctype="multipart/form-datax">
               @csrf
 
               <div>
@@ -127,8 +127,9 @@
                 <label class="col-form-label col-md-3 col-sm-3 label-align" for="foto">Foto
                 </label>
                 <div class="col-md-6 col-sm-6 ">
-                  <input type="text" id="foto" name="foto" required="required" class="form-control ">
+                  <input type="file" id="foto" name="foto" required class="form-control">
                 </div>
+              </div>
               <div class="mt-4">
                 <div class="col-md-6 col-sm-6">
                   <a class="btn btn-primary" href="{{ route("mahasiswa.index") }}">Cancel</a>
