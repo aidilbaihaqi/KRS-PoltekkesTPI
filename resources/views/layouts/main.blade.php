@@ -69,6 +69,10 @@
   <script src="{{ url('https://cdn.datatables.net/2.0.7/js/dataTables.bootstrap5.js') }}"></script>
   <script>
     new DataTable('#dataTable');
+    $('table').DataTable({
+      searching: false,
+      "bDestroy": true
+    });
   </script>
 </body>
 

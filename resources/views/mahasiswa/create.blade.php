@@ -40,7 +40,7 @@
             Form penambahan data mahasiswa
           </p>
           <div>
-            <form action="{{ route('mahasiswa.store') }}" method="POST" enctype="multipart/form-datax">
+            <form action="{{ route('mahasiswa.store') }}" method="POST" enctype="multipart/form-data">
               @csrf
 
               <div>

@@ -18,6 +18,7 @@ Route::middleware(['auth', 'verified'])->group(function() {
 
     Route::controller(KRSController::class)->group(function (){
         Route::get('/krs', 'index')->name('krs.index');
+        Route::get('/krs/search', 'search')->name('krs.search');
         Route::get('/krs/tambah', 'create')->name('krs.create');
         Route::post('/krs/tambah', 'store')->name('krs.store');
         Route::get('/krs/ubah/{kode_krs}', 'edit')->name('krs.edit');
@@ -26,7 +27,9 @@ Route::middleware(['auth', 'verified'])->group(function() {
     });
 
     Route::controller(MahasiswaController::class)->group(function() {
+        Route::get('/mahasiswa/search', 'search')->name('mahasiswa.search');
         Route::get('/mahasiswa', 'index')->name('mahasiswa.index');
+        Route::get('/mahasiswa/detail/{nim}', 'show')->name('mahasiswa.show');
         Route::get('/mahasiswa/tambah', 'create')->name('mahasiswa.create');
         Route::post('/mahasiswa/tambah', 'store')->name('mahasiswa.store');
         Route::get('/mahasiswa/ubah/{nim}', 'edit')->name('mahasiswa.edit');
