@@ -7,6 +7,7 @@ use App\Http\Controllers\MatakuliahController;
 use App\Http\Controllers\MahasiswaController;
 use App\Http\Controllers\KRSController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Redirect;
 
@@ -16,6 +17,15 @@ Route::get('/', function () {
 
 Route::middleware(['auth', 'verified'])->group(function() {
     Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
+
+    Route::controller(UserController::class)->group(function() {
+        Route::get('/user', 'index')->name('user.index');
+        Route::get('/user/tambah', 'create')->name('user.create');
+        Route::post('/user/tambah', 'store')->name('user.store');
+        Route::get('/user/ubah/{id}', 'edit')->name('user.edit');
+        Route::post('/user/ubah/{id}', 'update')->name('user.update');
+        Route::get('/user/{id}', 'destroy')->name('user.destroy');
+    });
 
     Route::controller(KRSController::class)->group(function (){
         Route::get('/krs', 'index')->name('krs.index');

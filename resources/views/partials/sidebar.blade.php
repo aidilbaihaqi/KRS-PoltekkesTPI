@@ -9,7 +9,7 @@
     </li>
     <li class="nav-item">
       <a class="nav-link" href="{{ route('mahasiswa.index') }}">
-        <i class="fa-solid fa-user mx-3"></i>
+        <i class="fa-solid fa-graduation-cap mx-3"></i>
         <span class="menu-title">Data Mahasiswa</span>
       </a>
     </li>
@@ -17,6 +17,12 @@
       <a class="nav-link" href="{{ route('krs.index') }}">
         <i class="fa-solid fa-id-card mx-3"></i>
         <span class="menu-title">Kartu Rencana Studi</span>
+      </a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="{{ route('user.index') }}">
+        <i class="fa-solid fa-user mx-3"></i>
+        <span class="menu-title">Data User</span>
       </a>
     </li>
     <li class="nav-item">
@@ -39,7 +45,7 @@
   <ul class="nav">
     <li class="nav-item">
       <a class="nav-link" href="{{ route('mahasiswa.index') }}">
-        <i class="fa-solid fa-user mx-3"></i>
+        <i class="fa-solid fa-graduation-cap mx-3"></i>
         <span class="menu-title">Data Mahasiswa</span>
       </a>
     </li>
