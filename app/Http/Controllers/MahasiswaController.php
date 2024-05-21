@@ -6,6 +6,7 @@ use App\Models\Jurusan;
 use App\Models\Kelas;
 use App\Models\Mahasiswa;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class MahasiswaController extends Controller
 {
@@ -37,10 +38,24 @@ class MahasiswaController extends Controller
             'tahun_akademik' => 'required',
             'kode_kelas' => 'required',
             'kode_jurusan' => 'required',
-            'foto' => 'required'
+            'foto' => 'required|image|mimes:jpg,png,jpeg,svg'
         ]);
 
-        Mahasiswa::create($request->all());
+        $foto = $request->foto->getClientOriginalName();
+        $request->foto->move(public_path('storage/images/mahasiswa'), $foto);
+
+        Mahasiswa::create([
+            'nim' => $request->nim,
+            'nama' => $request->nama,
+            'tgl_lahir' => $request->tgl_lahir,
+            'alamat' => $request->alamat,
+            'semester' => $request->semester,
+            'jenis_kelamin' => $request->jenis_kelamin,
+            'tahun_akademik' => $request->tahun_akademik,
+            'kode_kelas' => $request->kode_kelas,
+            'kode_jurusan' => $request->kode_jurusan,
+            'foto' => $foto
+        ]);
 
         return redirect()->route('mahasiswa.index')     
                         ->with('success', 'Mahasiswa berhasil ditambahkan!');
@@ -67,17 +82,37 @@ class MahasiswaController extends Controller
             'tahun_akademik' => 'required',
             'kode_kelas' => 'required',
             'kode_jurusan' => 'required',
-            'foto' => 'required'
+            'foto' => 'required|image|mimes:jpg,png,jpeg,svg'
         ]);
 
         $data = Mahasiswa::find($nim);
-        $data->update($request->all());
+        
+        if($request->has('foto')) {
+            Storage::delete('public/images/mahasiswa/'.basename($data->foto));
+            $foto = $request->foto->getClientOriginalName();
+            $request->foto->move(public_path('storage/images/mahasiswa'), $foto);
+        }
+        
+        
+        $data->update([
+            'nim' => $request->nim,
+            'nama' => $request->nama,
+            'tgl_lahir' => $request->tgl_lahir,
+            'alamat' => $request->alamat,
+            'semester' => $request->semester,
+            'jenis_kelamin' => $request->jenis_kelamin,
+            'tahun_akademik' => $request->tahun_akademik,
+            'kode_kelas' => $request->kode_kelas,
+            'kode_jurusan' => $request->kode_jurusan,
+            'foto' => $foto
+        ]);
 
         return redirect()->route('mahasiswa.index')
                         ->with('success', 'Mahasiswa berhasil diubah!');
     }
     public function destroy($nim) {
-        $data = Mahasiswa::where('nim', $nim);
+        $data = Mahasiswa::where('nim', $nim)->first();
+        Storage::delete('public/images/mahasiswa/'.basename($data->foto));
         $data->delete();
 
         return redirect()->route('mahasiswa.index')

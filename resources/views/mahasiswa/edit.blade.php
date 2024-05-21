@@ -40,7 +40,7 @@
             Form perubahan data mahasiswa
           </p>
           <div>
-            <form action="{{ route('mahasiswa.update', $data->nim) }}" method="POST">
+            <form action="{{ route('mahasiswa.update', $data->nim) }}" method="POST" enctype="multipart/form-data">
               @csrf
 
               <div>
@@ -126,8 +126,12 @@
                 <label class="col-form-label col-md-3 col-sm-3 label-align" for="foto">Foto
                 </label>
                 <div class="col-md-6 col-sm-6 ">
-                  <input type="text" id="foto" name="foto" value="{{ $data->foto }}" required="required" class="form-control ">
+                  <input type="file" id="foto" name="foto" value="{{ $data->foto }}"required class="form-control">
+                  <div class="card my-2">
+                    <img src="{{ asset('storage/images/mahasiswa/'.$data->foto) }}" width="300" alt="{{ $data->foto }}">
+                  </div>
                 </div>
+              </div>
               <div class="mt-4">
                 <div class="col-md-6 col-sm-6">
                   <a class="btn btn-primary" href="{{ route("mahasiswa.index") }}">Cancel</a>
