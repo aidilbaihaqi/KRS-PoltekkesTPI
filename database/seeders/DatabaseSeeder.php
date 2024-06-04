@@ -122,7 +122,7 @@ class DatabaseSeeder extends Seeder
             'status' => 0
         ]);
 
-        // Mahasiswa
+        // Login Mahasiswa
         User::create([
             'name' => 'Udin Bahrudin',
             'email' => 'udinbr@poltekkes-tanjungpinang.ac.id',
