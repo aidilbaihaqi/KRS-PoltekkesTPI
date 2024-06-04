@@ -59,7 +59,13 @@
                 <tr>
                   <th>Jenis Kelamin</th>
                   <td>:</td>
-                  <td>{{ $data->jenis_kelamin }}</td>
+                  <td>
+                    @if ($data->jenis_kelamin == 'L')
+                        Laki-laki
+                    @else
+                        Perempuan
+                    @endif
+                  </td>
                 </tr>
                 <tr>
                   <th>Tahun Akademik</th>

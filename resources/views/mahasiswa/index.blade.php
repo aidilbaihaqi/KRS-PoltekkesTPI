@@ -71,7 +71,13 @@
                     </td>
                     <td><span class="font-weight-bold text-primary">{{ $d->nim }}</span></td>
                     <td>{{ $d->nama }}</td>
-                    <td>{{ $d->jenis_kelamin }}</td>
+                    <td>
+                      @if ($d->jenis_kelamin == 'L')
+                          Laki-laki
+                      @else
+                          Perempuan
+                      @endif
+                    </td>
                     <td>{{ $d->semester }}</td>
                     <td>{{ $d->tahun_akademik }}</td>
                   </tr>

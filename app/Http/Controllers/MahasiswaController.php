@@ -102,7 +102,7 @@ class MahasiswaController extends Controller
             'tahun_akademik' => 'required',
             'kode_kelas' => 'required',
             'kode_jurusan' => 'required',
-            'foto' => 'required|image|mimes:jpg,png,jpeg,svg'
+            'foto' => 'image|mimes:jpg,png,jpeg,svg'
         ]);
 
         $data = Mahasiswa::find($nim);
@@ -111,6 +111,22 @@ class MahasiswaController extends Controller
             Storage::delete('public/images/mahasiswa/'.basename($data->foto));
             $foto = $request->foto->getClientOriginalName();
             $request->foto->move(public_path('storage/images/mahasiswa'), $foto);
+
+            $data->update([
+                'nim' => $request->nim,
+                'nama' => $request->nama,
+                'tgl_lahir' => $request->tgl_lahir,
+                'alamat' => $request->alamat,
+                'semester' => $request->semester,
+                'jenis_kelamin' => $request->jenis_kelamin,
+                'tahun_akademik' => $request->tahun_akademik,
+                'kode_kelas' => $request->kode_kelas,
+                'kode_jurusan' => $request->kode_jurusan,
+                'foto' => $foto
+            ]);
+
+            return redirect()->route('mahasiswa.index')
+                        ->with('success', 'Mahasiswa berhasil diubah!');
         }
         
         
@@ -123,8 +139,7 @@ class MahasiswaController extends Controller
             'jenis_kelamin' => $request->jenis_kelamin,
             'tahun_akademik' => $request->tahun_akademik,
             'kode_kelas' => $request->kode_kelas,
-            'kode_jurusan' => $request->kode_jurusan,
-            'foto' => $foto
+            'kode_jurusan' => $request->kode_jurusan
         ]);
 
         return redirect()->route('mahasiswa.index')
