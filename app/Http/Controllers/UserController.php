@@ -28,7 +28,8 @@ class UserController extends Controller
             'name' => 'required',
             'email' => 'required|email',
             'nim' => 'required|unique:App\Models\User,nim',
-            'isAdmin' => 'required'
+            'isAdmin' => 'required',
+            'password' => 'required'
         ]);
 
         $pw = Hash::make($request->nim);
@@ -38,7 +39,7 @@ class UserController extends Controller
             'email' => $request->email,
             'nim' => $request->nim,
             'isAdmin' => $request->isAdmin,
-            'password' => $pw
+            'password' => $pw // fitur default password
         ]);
 
         return redirect()->route('user.index')

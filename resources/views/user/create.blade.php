@@ -40,7 +40,7 @@
           @endif
 
           <div>
-            <form action="{{ route('user.store') }}" method="POST">
+            <form action="{{ route('user.store') }}" autocomplete="off" method="POST">
               @csrf
               <div>
                 <label class="col-form-label col-md-3 col-sm-3 label-align" for="name">Nama
@@ -53,7 +53,7 @@
                 <label class="col-form-label col-md-3 col-sm-3 label-align" for="email">Email
                 </label>
                 <div class="col-md-6 col-sm-6 ">
-                  <input type="email" id="email" name="email" required="required" class="form-control ">
+                  <input type="email" id="email" name="email" required="required" class="form-control " autocomplete="false">
                 </div>
               </div>
               <div>
